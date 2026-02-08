@@ -4,39 +4,43 @@ Deep Learning project for time-series forecasting using Long Short-Term Memory (
 The project focuses on forecasting pharmaceutical sales using transactional Point-of-Sale (POS)
 data aggregated at daily and weekly levels.
 
+The repository is organized to reflect the end-to-end ML workflow, separating raw and processed data, 
+exploratory analysis, preprocessing, baseline modeling, LSTM experimentation, and standardized evaluation 
+outputs to ensure reproducibility and clear comparison.
+
 ---
 
 ## Project Structure
-pharmacy-sales-prediction-lstm-model/
-│
-├── data/
-│ ├── raw/
-│ │ ├── sales_daily.csv # Daily aggregated pharmacy sales data
-│ │ └── sales_weekly.csv # Weekly aggregated pharmacy sales data
-│ │
-│ └── processed/
-│ ├── daily_processed.csv # Preprocessed daily dataset (scaled, windowed)
-│ └── weekly_processed.csv # Preprocessed weekly dataset
-│
-├── notebooks/
-│ ├── 01_eda.ipynb # Exploratory Data Analysis
-│ ├── 02_preprocessing.ipynb # Data cleaning, scaling, windowing
-│ ├── 03_baseline_models.ipynb # Naive, Moving Average, ARIMA models
-│ └── 04_lstm_model.ipynb # LSTM model training and evaluation
-│
-├── src/
-│ ├── preprocessing.py # Helper functions for preprocessing
-│ ├── baselines.py # Baseline forecasting models
-│ ├── lstm_model.py # LSTM model definition and training
-│ └── evaluation.py # Evaluation metrics and plotting utilities
-│
-├── results/
-│ ├── figures/ # Generated plots and visualizations
-│ └── metrics/ # Model evaluation results (MAE, RMSE)
-│
-├── requirements.txt # Python dependencies
-├── README.md # Project documentation
-└── .gitignore
+    pharmacy-sales-prediction-lstm-model/
+    │
+    ├── data/
+    │ ├── raw/
+    │ │ ├── sales_daily.csv # Daily aggregated pharmacy sales data
+    │ │ └── sales_weekly.csv # Weekly aggregated pharmacy sales data
+    │ │
+    │ └── processed/
+    │ ├── daily_processed.csv # Preprocessed daily dataset (scaled, windowed)
+    │ └── weekly_processed.csv # Preprocessed weekly dataset
+    │
+    ├── notebooks/
+    │ ├── 01_eda.ipynb # Exploratory Data Analysis
+    │ ├── 02_preprocessing.ipynb # Data cleaning, scaling, windowing
+    │ ├── 03_baseline_models.ipynb # Naive, Moving Average, ARIMA models
+    │ └── 04_lstm_model.ipynb # LSTM model training and evaluation
+    │
+    ├── src/
+    │ ├── preprocessing.py # Helper functions for preprocessing
+    │ ├── baselines.py # Baseline forecasting models
+    │ ├── lstm_model.py # LSTM model definition and training
+    │ └── evaluation.py # Evaluation metrics and plotting utilities
+    │
+    ├── results/
+    │ ├── figures/ # Generated plots and visualizations
+    │ └── metrics/ # Model evaluation results (MAE, RMSE)
+    │
+    ├── requirements.txt # Python dependencies
+    ├── README.md # Project documentation
+    └── .gitignore
 
 ---
 
