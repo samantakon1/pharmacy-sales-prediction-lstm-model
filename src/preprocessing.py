@@ -7,8 +7,6 @@ def enforce_continuous_index(df, freq: str):
     full_idx = pd.date_range(df.index.min(), df.index.max(), freq=freq)
     df = df.reindex(full_idx)
     df.index.name = "ds"
-    # If any gaps appear, fill with 0 (or you can forward fill).
-    # For POS demand, 0 is often reasonable (closed/no sales day).
     df["y"] = df["y"].fillna(0.0)
     return df.reset_index()
 
@@ -40,6 +38,5 @@ def make_windows(series_1d: np.ndarray, window_size: int):
         y.append(series_1d[i])
     X = np.array(X)
     y = np.array(y)
-    # LSTM expects 3D: (samples, timesteps, features)
     X = X.reshape((X.shape[0], X.shape[1], 1))
     return X, y
